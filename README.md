@@ -25,5 +25,3 @@ ANY USE OF THIS PROEJCTS CODE, IDEA, OR ASSETS IS STRICTLY FORBIDDEN WITHOUT WRI
 
 
 This project is still in development, as such Readme, code, and other assets are subject to change. 
-This is a test.
-
