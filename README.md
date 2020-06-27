@@ -6,7 +6,7 @@ Team 5
   Version: v0.0.1
 
 ## License
-ANY USE OF THIS PROEJCTS CODE, IDEA, OR ASSETS IS STRICTLY FORBIDDEN WITHOUT WRITTEN CONSENT
+ANY USE OF THIS PROJECTS CODE, IDEA, OR ASSETS IS STRICTLY FORBIDDEN WITHOUT WRITTEN CONSENT
 
 ## Code Agreement
   By downloading any version of this project you agree that another individuals source cannot be pulled from this project, for use in another project without his/her and the teams' permission.
@@ -19,7 +19,7 @@ ANY USE OF THIS PROEJCTS CODE, IDEA, OR ASSETS IS STRICTLY FORBIDDEN WITHOUT WRI
 
 ### Who To Talk To:
  John M - john.murwin [@] gmail.com   
- Mike F -   
+ Mike A - maufiero [@] gmail.com
  Scott R -  scottrobinson4591@gmail.com
 
 
