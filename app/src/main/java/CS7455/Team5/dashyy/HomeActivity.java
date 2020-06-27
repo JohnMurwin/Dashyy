@@ -36,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     //GPS Screen
     public void onGPSClick (View view)
     {
-        Intent intent = new Intent(this, GPSActivity.class);
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
     //Settings Screen
