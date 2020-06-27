@@ -20,7 +20,4 @@
         <activity android:name=".GPSActivity" />
         <activity android:name=".HomeActivity" />
     </application>
-
-
-
 </manifest>
