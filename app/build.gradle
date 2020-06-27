@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
@@ -32,4 +33,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    // add SDKs for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
+    // firebase authentication
+    //    implementation 'com.google.firebase:firebase-auth-ktx:19.3.1'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
 }

@@ -67,6 +67,8 @@
         android:text="@string/forgotPWPB_Text"
         android:textStyle="italic"
         android:typeface="normal"
+        android:clickable="true"
+        android:onClick="ForgotPasswordClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
