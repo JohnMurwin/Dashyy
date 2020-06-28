@@ -13,6 +13,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true;
     }
 
     buildTypes {
@@ -39,4 +41,7 @@ dependencies {
     // firebase authentication
     //    implementation 'com.google.firebase:firebase-auth-ktx:19.3.1'
     implementation 'com.google.firebase:firebase-auth:19.3.1'
+
+    compile 'com.google.android.gms:play-services-base:7.3.0'
+    compile 'com.google.android.gms:play-services-location:7.3.0'
 }
