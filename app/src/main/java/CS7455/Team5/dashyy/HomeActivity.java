@@ -15,11 +15,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 public class HomeActivity extends AppCompatActivity {
 
     //Class Variables
-
+    ImageView maps_IV;
 
     //Component Variables
 
@@ -30,6 +31,14 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         //Component Setup
+        maps_IV = findViewById(R.id.map_PB);
+        maps_IV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //SCREEN NAVIGATION
@@ -41,3 +50,5 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
+
+
