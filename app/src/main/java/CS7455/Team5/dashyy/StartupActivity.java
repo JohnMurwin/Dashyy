@@ -17,16 +17,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
+import android.transition.TransitionManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.util.Strings;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,9 +42,10 @@ public class StartupActivity extends AppCompatActivity {
 
 
     //Component Variables
-    TextView signupPB;
     EditText nameInput, emailInput, passwordInput, passwordConfirmInput;
-    Button loginPB;
+    Button loginPB, signupPB, forgotPWPB;
+    TextInputLayout nameTIL, passwordConfirmTIL;
+    LinearLayout inputLL;
 
 
     @Override
@@ -61,6 +64,11 @@ public class StartupActivity extends AppCompatActivity {
         loginPB = findViewById(R.id.login_PB);
         //initializing firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
+
+        nameTIL = findViewById(R.id.name_TIL);
+        passwordConfirmTIL = findViewById(R.id.passwordConfirm_TIL);
+
+        inputLL = findViewById(R.id.Input_LinearLayout);
 
 
         /* STARTUP LOGIC */
@@ -143,11 +151,13 @@ public class StartupActivity extends AppCompatActivity {
     //SIGNUP:
     public void SignupClick (View view)
     {
+        TransitionManager.beginDelayedTransition(inputLL);
+
         if (loginMode)
         {
             //Show Fields & Change Name
-            nameInput.setVisibility(View.VISIBLE);
-            passwordConfirmInput.setVisibility(View.VISIBLE);
+            nameTIL.setVisibility(View.VISIBLE);
+            passwordConfirmTIL.setVisibility(View.VISIBLE);
             loginPB.setText("SIGN UP");
             signupPB.setText("Log In");
 
@@ -157,8 +167,8 @@ public class StartupActivity extends AppCompatActivity {
         else
         {
             //Show Fields & Change Name
-            nameInput.setVisibility(View.INVISIBLE);
-            passwordConfirmInput.setVisibility(View.INVISIBLE);
+            nameTIL.setVisibility(View.INVISIBLE);
+            passwordConfirmTIL.setVisibility(View.INVISIBLE);
             loginPB.setText("LOG IN");
             signupPB.setText("Sign Up");
 
