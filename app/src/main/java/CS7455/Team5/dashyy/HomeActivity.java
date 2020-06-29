@@ -34,4 +34,10 @@ public class HomeActivity extends AppCompatActivity {
 
     //SCREEN NAVIGATION
 
+    //Maps Screen
+    public void MapClick(View view)
+    {
+        Intent intent = new Intent (this, MapsActivity.class);
+        startActivity(intent);
+    }
 }

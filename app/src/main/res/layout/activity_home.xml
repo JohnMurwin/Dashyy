@@ -136,6 +136,7 @@
         android:id="@+id/map_PB"
         android:layout_width="55dp"
         android:layout_height="52dp"
+        android:onClick="MapClick"
         app:layout_constraintBottom_toBottomOf="@+id/home_PB"
         app:layout_constraintEnd_toStartOf="@+id/home_PB"
         app:layout_constraintStart_toStartOf="parent"
