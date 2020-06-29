@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Dashyy</string>
-    <string name="title_activity_maps">Maps</string>
 
     <!-- Startup Screen -->
     <string name="forgotPWPB_Text">Forgot Password?</string>
     <string name="loginPB_Text">LOG IN</string>
     <string name="signupPB_Text">Sign Up</string>
     <string name="accountCreatedText">Account Successfully Created</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>
