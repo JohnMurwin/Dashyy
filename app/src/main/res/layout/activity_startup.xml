@@ -1,110 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
+    android:id="@+id/FrameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StartupActivity">
 
-    <EditText
-        android:id="@+id/name_ET"
-        android:layout_width="315dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="240dp"
-        android:ems="10"
-        android:hint="NAME"
-        android:inputType="textPersonName"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- TEXT INPUT LAYOUT -->
+    <LinearLayout
+        android:id="@+id/Input_LinearLayout"
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/email_ET"
-        android:layout_width="315dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="EMAIL"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_ET" />
+        <!-- Name Text Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name_TIL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="Name"
+            android:visibility="invisible">
 
-    <EditText
-        android:id="@+id/password_ET"
-        android:layout_width="315dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="PASSWORD"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_ET" />
+            <EditText
+                android:id="@+id/name_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/passwordConfirm_ET"
-        android:layout_width="315dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="CONFIRM PASSWORD"
-        android:inputType="textPassword"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_ET" />
+        <!-- Email Text Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_TIL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="Email">
 
-    <TextView
-        android:id="@+id/forgotPW_PB"
+            <EditText
+                android:id="@+id/email_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password Text Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_TIL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:hint="Password"
+            app:endIconMode="password_toggle">>
+
+            <EditText
+                android:id="@+id/password_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password Confirm Text Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordConfirm_TIL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Confirm Password"
+            android:visibility="invisible"
+            app:endIconMode="password_toggle">>
+
+            <EditText
+                android:id="@+id/passwordConfirm_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!-- BUTTON LINEAR LAYOUT -->
+    <LinearLayout
+        android:id="@+id/Button_LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="@string/forgotPWPB_Text"
-        android:textStyle="italic"
-        android:typeface="normal"
-        android:clickable="true"
-        android:onClick="ForgotPasswordClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordConfirm_ET" />
+        android:layout_gravity="bottom|center_horizontal"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/login_PB"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="64dp"
-        android:fontFamily="monospace"
-        android:onClick="LoginClick"
-        android:text="@string/loginPB_Text"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotPW_PB" />
+        <!-- Login PB -->
+        <Button
+            android:id="@+id/login_PB"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:onClick="LoginClick"
+            android:paddingBottom="10dp"
+            android:text="Log In"
+            android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/signup_PB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:onClick="SignupClick"
-        android:text="@string/signupPB_Text"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_PB" />
+        <!-- Sign Up PB -->
+        <Button
+            android:id="@+id/signup_PB"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="SignupClick"
+            android:paddingBottom="10dp"
+            android:text="Sign Up" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Forgot PW PB-->
+        <Button
+            android:id="@+id/forgotPW_PB"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ForgotPasswordClick"
+            android:paddingBottom="10dp"
+            android:text="Forgot Password?" />
+    </LinearLayout>
+</FrameLayout>
