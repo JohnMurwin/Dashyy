@@ -68,11 +68,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             dbGps.child(geoTag.getID()).setValue(geoTag);
         }
         else{
-            // Add a marker in Sydney and move the camera
-            LatLng sydney = new LatLng(-34, 151);
-            mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-            dbGps.child(id).setValue(sydney);
+            // Add a marker to KSU's Atrium building
+            LatLng ksuAtriumBldg = new LatLng(33.9357641, -84.5208089);
+            mMap.addMarker(new MarkerOptions().position(ksuAtriumBldg).title("Atrium Building (KSU)"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(ksuAtriumBldg));
+            dbGps.child(id).setValue(ksuAtriumBldg);
         }
     }
 
