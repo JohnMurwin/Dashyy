@@ -12,9 +12,12 @@ package CS7455.Team5.dashyy;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.TransitionManager;
@@ -62,8 +65,23 @@ public class StartupActivity extends AppCompatActivity {
         passwordConfirmInput = findViewById(R.id.passwordConfirm_ET);
 
         loginPB = findViewById(R.id.login_PB);
+
+        // verify permissions
+        boolean permissionGranted = ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+        if(!permissionGranted) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 200);
+        }
+        permissionGranted = ActivityCompat.checkSelfPermission(this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED;
+        if(!permissionGranted) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, 200);
+        }
+
         //initializing firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()!=null) {
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            startActivity(intent);
+        }
 
         nameTIL = findViewById(R.id.name_TIL);
         passwordConfirmTIL = findViewById(R.id.passwordConfirm_TIL);
@@ -81,10 +99,10 @@ public class StartupActivity extends AppCompatActivity {
     //LOGIN:
     public void LoginClick (View view)
     {
+        final Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
         String email = emailInput.getText().toString().toLowerCase();
         String pass = passwordInput.getText().toString();
         final String displayName = nameInput.getText().toString();
-        final Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
         //True Login
         if (loginMode)
         {
