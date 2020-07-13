@@ -8,4 +8,9 @@
     <string name="accountCreatedText">Account Successfully Created</string>
     <string name="title_activity_maps">Map</string>
 
+    <!-- Bottom Nav Bar Strings -->
+    <string name="maps">Maps</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+
 </resources>

@@ -7,11 +7,11 @@ Semester Project - Dashyy
 Any use of the following code is forbidden without prior consent.
 */
 
-package CS7455.Team5.dashyy;
+package cs7455.team5.dashyy;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
-import java.util.concurrent.TimeUnit;
+
 import com.google.firebase.database.IgnoreExtraProperties;
 
 @IgnoreExtraProperties

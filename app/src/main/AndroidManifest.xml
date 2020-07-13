@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="CS7455.Team5.dashyy"
+    package="cs7455.team5.dashyy"
     android:usesCleartextTraffic="true">
 
     <!--
@@ -33,7 +33,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name="cs7455.team5.dashyy.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -44,7 +44,7 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <activity
-            android:name=".StartupActivity"
+            android:name="cs7455.team5.dashyy.StartupActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,8 +52,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name="cs7455.team5.dashyy.SettingsActivity" />
+        <activity android:name="cs7455.team5.dashyy.HomeActivity" />
     </application>
 
 </manifest>

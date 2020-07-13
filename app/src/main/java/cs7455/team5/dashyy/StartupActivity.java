@@ -7,7 +7,7 @@ Semester Project - Dashyy
 Any use of the following code is forbidden without prior consent.
 */
 
-package CS7455.Team5.dashyy;
+package cs7455.team5.dashyy;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -25,7 +25,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.util.Strings;
