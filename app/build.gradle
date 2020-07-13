@@ -6,7 +6,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "CS7455.Team5.dashyy"
+        applicationId "cs7455.team5.dashyy"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -14,7 +14,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        vectorDrawables.useSupportLibrary = true;
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {

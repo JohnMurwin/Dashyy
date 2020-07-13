@@ -12,7 +12,6 @@ package cs7455.team5.dashyy;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.database.IgnoreExtraProperties;
 
 @IgnoreExtraProperties

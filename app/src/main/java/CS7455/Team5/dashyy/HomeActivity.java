@@ -9,6 +9,7 @@ Any use of the following code is forbidden without prior consent.
 
 package cs7455.team5.dashyy;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -35,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     // for callback
     private boolean hasPermissionResult = false;
 
+
     //Component Variables
     ImageView maps_IV;
     Button track_BTN;
@@ -59,17 +61,17 @@ public class HomeActivity extends AppCompatActivity {
         Log.d(TAG, "checkPermissions");
     }
 
+        Log.d(TAG, "requestPermissionReadWrite");
     private void requestPermissionReadSend(){
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS, Manifest.permission.SEND_SMS}, 120);
-        Log.d(TAG, "requestPermissionReadWrite");
-    }
 
     @Override
+    }
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 120) {
-            postPermissionInit();
         }
+            postPermissionInit();
         Log.d(TAG, "onRequestPermissionsResult");
     }
 
@@ -88,6 +90,7 @@ public class HomeActivity extends AppCompatActivity {
         Log.d(TAG, "View initialized");
     }
 
+    public void MapClick(View view)
     private void postPermissionInit() {
         track_BTN.setEnabled(true);
     }
@@ -95,9 +98,8 @@ public class HomeActivity extends AppCompatActivity {
     //SCREEN NAVIGATION
 
     //Maps Screen
-    public void MapClick(View view)
     {
-        Intent intent = new Intent (this, MapsActivity.class);
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 
@@ -121,5 +123,3 @@ public class HomeActivity extends AppCompatActivity {
         track_BTN.setText("TRACKING..");
     }
 }
-
-
