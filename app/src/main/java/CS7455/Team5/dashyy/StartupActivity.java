@@ -7,7 +7,7 @@ Semester Project - Dashyy
 Any use of the following code is forbidden without prior consent.
 */
 
-package CS7455.Team5.dashyy;
+package cs7455.team5.dashyy;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -110,20 +110,26 @@ public class StartupActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Email and Password cannot be empty",Toast.LENGTH_LONG).show();
             }
             else {
-                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(StartupActivity.this,
-                        new OnCompleteListener<AuthResult>() {
-                            @RequiresApi(api = Build.VERSION_CODES.O)
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    startActivity(intent);
-                                } else {
-                                    // TODO: # Failed attempts "Lock account"?
-                                    Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                try {
+                    firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(StartupActivity.this,
+                            new OnCompleteListener<AuthResult>() {
+                                @RequiresApi(api = Build.VERSION_CODES.O)
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        startActivity(intent);
+                                    } else {
+                                        // TODO: # Failed attempts "Lock account"?
+                                        Toast.makeText(getApplicationContext(), "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        });
+                            });
+                }
+                catch(Exception ex){
+                    Toast.makeText(getApplicationContext(), "Authentication failed. " + ex.getMessage(),
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         }
         //Sign Up
