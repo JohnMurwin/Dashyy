@@ -191,7 +191,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         prevLat = location.getLatitude();
                         prevLong = location.getLongitude();
                         // TODO Compute speed
-                        int speed = (int)(location.getSpeed() * 2.236936);
+                        int speed = (int)(location.getSpeed() * 2.237);
                         geoTag.setSpeed(speed);
                         updateSpeedDisplay(speed);
                         moved = true;

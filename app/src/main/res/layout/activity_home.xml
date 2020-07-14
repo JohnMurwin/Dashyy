@@ -1,91 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity" >
+    tools:context=".HomeActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/alert_Bar"
+        android:layout_width="377dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_alertbar" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="272dp"
-            android:onClick="MapsZoom"
-            android:text="Go To"
-            app:layout_constraintStart_toStartOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+    <ImageView
+        android:id="@+id/alert_Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/alert_Bar"
+        app:layout_constraintTop_toTopOf="@+id/alert_Bar"
+        app:srcCompat="@drawable/ic_error_black_24dp" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginStart="100dp"
-            android:text="Configure"
-            app:layout_constraintStart_toEndOf="@+id/button"
-            app:layout_constraintTop_toTopOf="@+id/button" />
+    <TextView
+        android:id="@+id/alertText_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="No active alerts."
+        app:layout_constraintStart_toEndOf="@+id/alert_Icon"
+        app:layout_constraintTop_toTopOf="@+id/alert_Bar" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="356dp"
-            android:layout_height="378dp"
-            android:layout_marginTop="108dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/container" />
+    <ScrollView
+        android:id="@+id/main_ScrollView"
+        android:layout_width="409dp"
+        android:layout_height="604dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alert_Bar">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_marginTop="12dp"
-            android:text="Chris O"
-            android:textColor="#9C27B0"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.068"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.549"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_alertbar" />
+            <ImageButton
+                android:id="@+id/childContainer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_childcontainer" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:text="No active alerts at this time."
-            android:textColor="#FFFFFF"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+            <TextView
+                android:id="@+id/childOneName_TV"
+                android:layout_width="199dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="28dp"
+                android:text="TextView"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/childContainer1"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2"
-            app:srcCompat="@drawable/ic_error_black_24dp" />
+            <TextView
+                android:id="@+id/childOneDetail_TV"
+                android:layout_width="165dp"
+                android:layout_height="131dp"
+                android:layout_marginTop="16dp"
+                android:text="TextView"
+                app:layout_constraintStart_toEndOf="@+id/childOneName_TV"
+                app:layout_constraintTop_toBottomOf="@+id/childOneName_TV" />
 
             <Button
                 android:id="@+id/childOneMaps_PB"
@@ -100,18 +98,58 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/childOneName_TV" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:orientation="vertical">
+            <Button
+                android:id="@+id/childOneConfigure_PB"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="160dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginLeft="44dp"
+                android:text="CONFIGURE"
+                app:layout_constraintStart_toEndOf="@+id/childOneMaps_PB"
+                app:layout_constraintTop_toTopOf="@+id/childOneMaps_PB" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:menu="@menu/bottom_navigation_menu" />
-    </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/bottomNav_Bar"
+        android:layout_width="515dp"
+        android:layout_height="104dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_bottomnavbar" />
+
+    <ImageView
+        android:id="@+id/home_PB"
+        android:layout_width="55dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_home_normal_24dp" />
+
+    <ImageView
+        android:id="@+id/map_PB"
+        android:layout_width="55dp"
+        android:layout_height="52dp"
+        android:onClick="MapClick"
+        app:layout_constraintBottom_toBottomOf="@+id/home_PB"
+        app:layout_constraintEnd_toStartOf="@+id/home_PB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_map_normal_24dp" />
+
+    <ImageView
+        android:id="@+id/settings_PB"
+        android:layout_width="55dp"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toBottomOf="@+id/home_PB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/home_PB"
+        app:srcCompat="@drawable/ic_settings_normal_24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

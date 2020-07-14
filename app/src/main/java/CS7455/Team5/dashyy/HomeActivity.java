@@ -15,7 +15,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -61,21 +63,20 @@ public class HomeActivity extends AppCompatActivity {
         Log.d(TAG, "checkPermissions");
     }
 
-        Log.d(TAG, "requestPermissionReadWrite");
     private void requestPermissionReadSend(){
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS, Manifest.permission.SEND_SMS}, 120);
+    }
 
     @Override
-    }
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 120) {
-        }
+        if(requestCode == 120){
             postPermissionInit();
+        }
         Log.d(TAG, "onRequestPermissionsResult");
     }
 
-    private void initView() {
+    private void initView(){
         track_BTN = findViewById(R.id.childOneMaps_PB);
         track_BTN.setEnabled(false);
         checkPermissions();
@@ -83,23 +84,22 @@ public class HomeActivity extends AppCompatActivity {
         maps_IV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), cs7455.team5.dashyy.MapsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(intent);
             }
         });
-        Log.d(TAG, "View initialized");
     }
 
-    public void MapClick(View view)
-    private void postPermissionInit() {
+    private void postPermissionInit(){
         track_BTN.setEnabled(true);
     }
 
     //SCREEN NAVIGATION
 
     //Maps Screen
+    public void MapClick(View view)
     {
-        Intent intent = new Intent(this, MapsActivity.class);
+        Intent intent = new Intent (this, MapsActivity.class);
         startActivity(intent);
     }
 
@@ -115,6 +115,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void childOneMaps_PB_onClick(View view) {
+        requestSmsSendPermission(); //TODO: add to app variable so we don't keep asking
         SmsManager sms = SmsManager.getDefault();
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("SMS_SENT"), 0);
         ArrayList<String> parts = sms.divideMessage("DEPARTING");
@@ -123,3 +124,5 @@ public class HomeActivity extends AppCompatActivity {
         track_BTN.setText("TRACKING..");
     }
 }
+
+
