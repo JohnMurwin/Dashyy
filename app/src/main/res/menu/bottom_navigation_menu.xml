@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Maps_Page"
+        android:enabled="true"
+        android:icon="@drawable/ic_map_active_24dp"
+        android:title="@string/maps" />
+    <item
+        android:id="@+id/Home_Page"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_active_24dp"
+        android:title="@string/home"/>
+    <item
+        android:id="@+id/Settings_Page"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings_active_24dp"
+        android:title="@string/settings"/>
+</menu>

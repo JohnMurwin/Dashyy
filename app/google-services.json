@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "802631654655",
-    "firebase_url": "https://dashyy-397cf.firebaseio.com",
-    "project_id": "dashyy-397cf",
-    "storage_bucket": "dashyy-397cf.appspot.com"
+    "project_number": "433303097823",
+    "firebase_url": "https://dashyy-v2.firebaseio.com",
+    "project_id": "dashyy-v2",
+    "storage_bucket": "dashyy-v2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:802631654655:android:979282df4972d4df35c0ca",
+        "mobilesdk_app_id": "1:433303097823:android:78ae8e102c1d66501f346a",
         "android_client_info": {
-          "package_name": "CS7455.Team5.dashyy"
+          "package_name": "cs7455.team5.dashyy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "802631654655-nptigs4pamh24cf62rs8568mbl9cuktq.apps.googleusercontent.com",
+          "client_id": "433303097823-tlvejcdukj5ghf25hoqsfin5kqehtcnm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAHOF2KUxB3sbuQloPw02LHS7uObi7pJ78"
+          "current_key": "AIzaSyCnEb8FnHyqu6sUK4FgsV5x0rkd8g8_5KU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "802631654655-nptigs4pamh24cf62rs8568mbl9cuktq.apps.googleusercontent.com",
+              "client_id": "433303097823-tlvejcdukj5ghf25hoqsfin5kqehtcnm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
