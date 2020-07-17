@@ -23,10 +23,13 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -39,10 +42,6 @@ public class HomeActivity extends AppCompatActivity {
     private boolean hasPermissionResult = false;
 
 
-    //Component Variables
-    ImageView maps_IV;
-    Button track_BTN;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +49,33 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         //Component Setup
-        initView();
+        //initView();
+
+        //SCREEN NAVIGATION
+        final BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+                    case R.id.Maps_Page:
+                        Intent intent = new Intent(HomeActivity.this, MapsActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.Home_Page:
+                        //Intent intent2 = new Intent(HomeActivity.this, HomeActivity.class);
+                        //startActivity(intent2);
+                        break;
+
+                    case R.id.Settings_Page:
+                        Intent intent3 = new Intent (HomeActivity.this, SettingsActivity.class);
+                        startActivity(intent3);
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     private void checkPermissions() {
@@ -67,16 +92,16 @@ public class HomeActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS, Manifest.permission.SEND_SMS}, 120);
     }
 
-    @Override
+    /*@Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode == 120){
             postPermissionInit();
         }
         Log.d(TAG, "onRequestPermissionsResult");
-    }
+    }*/
 
-    private void initView(){
+    /*private void initView(){
         track_BTN = findViewById(R.id.childOneMaps_PB);
         track_BTN.setEnabled(false);
         checkPermissions();
@@ -88,13 +113,11 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
+    }*/
 
-    private void postPermissionInit(){
+    /*private void postPermissionInit(){
         track_BTN.setEnabled(true);
-    }
-
-    //SCREEN NAVIGATION
+    }*/
 
     //Maps Screen
     public void MapClick(View view)
@@ -114,7 +137,7 @@ public class HomeActivity extends AppCompatActivity {
                 SEND_SMS_CODE);
     }
 
-    public void childOneMaps_PB_onClick(View view) {
+    /*public void childOneMaps_PB_onClick(View view) {
         requestSmsSendPermission(); //TODO: add to app variable so we don't keep asking
         SmsManager sms = SmsManager.getDefault();
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, new Intent("SMS_SENT"), 0);
@@ -122,7 +145,7 @@ public class HomeActivity extends AppCompatActivity {
         sms.sendTextMessage("+17068315347", null, "DEPARTING!", pendingIntent, null);
         Toast.makeText(getApplicationContext(), "SMS Sent", Toast.LENGTH_LONG).show();
         track_BTN.setText("TRACKING..");
-    }
+    }*/
 }
 
 
