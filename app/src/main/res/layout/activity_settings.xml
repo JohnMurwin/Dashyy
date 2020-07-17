@@ -2,15 +2,53 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FrameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
     <LinearLayout
+        android:id="@+id/MainLinLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:orientation="vertical">
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/arrivalNotif_Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="true" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/departureNotif_Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="true" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/phoneNotif_Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="true" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/textNotif_Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="true" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/radiusNotif_Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="true" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/curfewNotif_Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checked="true" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
