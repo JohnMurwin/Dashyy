@@ -14,42 +14,242 @@
         android:layout_gravity="bottom|center_horizontal"
         android:orientation="vertical">
 
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/arrivalNotif_Switch"
+        <!-- Speed Notifications Section -->
+        <TextView
+            android:id="@+id/gFroce_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="GForce Trip Setup"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            android:layout_marginLeft="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp">
+
+            <SeekBar
+                android:id="@+id/gForce_Slider"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:min="0"
+                android:max="10"
+                android:stepSize="1" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/force_TIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="2dp"
+                android:hint="g's">
+
+                <EditText
+                    android:id="@+id/force_ET"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Speed Notifications Section -->
+        <TextView
+            android:id="@+id/speed_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Speed Trip Setup"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            android:layout_marginLeft="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp">
+
+            <SeekBar
+                android:id="@+id/speed_Slider"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:min="50"
+                android:max="80"
+                android:stepSize="5" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/speed_TIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="2dp"
+                android:hint="mph">
+
+                <EditText
+                    android:id="@+id/speed_ET"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Arrival and Depature Notifications Section -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:checked="true" />
+            android:layout_marginBottom="20dp">
 
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/departureNotif_Switch"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/arrival_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Arrival"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    android:layout_marginLeft="5dp"/>
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/arrivalNotif_Switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:checked="true"
+                    android:text="Off/On"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="75dp">
+                <TextView
+                    android:id="@+id/departure_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Departure"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    android:layout_marginLeft="5dp"/>
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/departureNotif_Switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:checked="true"
+                    android:text="Off/On"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Travel Radius Section -->
+        <TextView
+            android:id="@+id/radius_TV"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:checked="true" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Travel Radius Setup"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            android:layout_marginLeft="5dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/homeAddress_TIL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="2dp"
+            android:hint="Home Address:">
 
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/phoneNotif_Switch"
+            <EditText
+                android:id="@+id/homeAddress_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginBottom="20dp">
+
+            <SeekBar
+                android:id="@+id/travelRadius_Slider"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:min="50"
+                android:max="80"
+                android:stepSize="5" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/travelRaidusNotif_Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="8dp"
+                android:checked="true"
+                android:text="Off/On" />
+        </LinearLayout>
+
+        <!-- Time Curfew Section -->
+        <TextView
+            android:id="@+id/timeCurfew_TV"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Time Curfew Setup"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            android:layout_marginLeft="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:checked="true" />
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/textNotif_Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:checked="true" />
+            <!-- Time Curfew Text Input & Switcher -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/name_TIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="150sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Time (hh:mm)">
 
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/radiusNotif_Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:checked="true" />
+                <EditText
+                    android:id="@+id/timeCurfew_ET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="time" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/timeCurfewNotif_Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="10dp"
+                android:checked="true"
+                android:text="Off/On"/>
+        </LinearLayout>
 
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/curfewNotif_Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:checked="true" />
-
+        <!-- Bottom Layout -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
@@ -57,5 +257,4 @@
             android:layout_height="wrap_content"
             app:menu="@menu/bottom_navigation_menu" />
     </LinearLayout>
-
 </FrameLayout>
